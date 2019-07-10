@@ -1,0 +1,26 @@
+{% extends 'schedule/base.html'%}
+
+{% block title %}
+  Group choise
+{% endblock %}
+
+{% block heading %}
+  <h1 style="text-align:center">schedule:</h1>
+{% endblock %}
+
+{% block content %}
+  <table>
+    {% load index %}
+    {% for i in counter %}
+    <tr>
+
+      <td style="border: 1px solid black">День: {{ day_number|index:forloop.counter0}}</td>
+      <td style="border: 1px solid black">{{ time_window|index:forloop.counter0 }}</td>
+      <td style="border: 1px solid black">{{ type0 }} по предмету {{ subject|index:forloop.counter0 }}</td>
+      <td style="border: 1px solid black">{{ building|index:forloop.counter0 }}; {{ room|index:forloop.counter0 }}</td>
+      <td style="border: 1px solid black; padding: 5px">{{ teacher|index:forloop.counter0 }}</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
